@@ -9,6 +9,6 @@ public class SomeServiceIT {
     public void getSomeString() {
         SomeService someService = new SomeService();
         String actual = someService.getSomeString();
-        assertEquals(actual, "ABC");
+        assertEquals(actual, "DEF");
     }
 }
