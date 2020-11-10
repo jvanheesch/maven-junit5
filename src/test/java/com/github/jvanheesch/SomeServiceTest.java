@@ -8,7 +8,7 @@ public class SomeServiceTest {
     @Test
     public void testTrue() {
         SomeService someService = new SomeService();
-        boolean actual = someService.returnInput(true);
+        boolean actual = someService.returnInput(false);
         assertTrue(actual);
     }
 
