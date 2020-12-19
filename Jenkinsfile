@@ -16,13 +16,11 @@ pipeline {
     stages {
         stage('Checkout') {
             steps {
-                timestamps {
                     script {
                         echo 'Checkout'
                         checkoutFromGithub(this, 'site-parent-pom', 'master')
                         pom = this.readMavenPom()
                     }
-                }
             }
         }
         stage('Build') {
