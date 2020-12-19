@@ -24,6 +24,7 @@ pipeline {
         }
         stage('Build') {
             steps {
+                timestamps {
                     script {
                         echo 'Build'
                         sh 'mvn -version'
@@ -33,6 +34,7 @@ pipeline {
 //                            sh 'mvn clean install -U -X -DskipTests=true -s $MAVEN_SETTINGS_XML'
 //                        }
                     }
+                }
             }
         }
     }
