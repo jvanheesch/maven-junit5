@@ -10,7 +10,7 @@ pipeline {
     }
 
     tools {
-        maven 'jenkins-maven-installation-3.5.4'
+        maven 'maven-3.3.9'
     }
 
     stages {
