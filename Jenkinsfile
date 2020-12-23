@@ -39,7 +39,7 @@ pipeline {
     }
     post {
         always {
-            junit '**/target/failsafe-reports/*.xml'
+            junit '**/target/surefire-reports/*.xml'
         }
         failure {
             script {
