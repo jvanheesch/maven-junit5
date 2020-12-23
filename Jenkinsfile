@@ -38,6 +38,9 @@ pipeline {
         }
     }
     post {
+        always {
+            junit '**/target/failsafe-reports/*.xml'
+        }
         failure {
             script {
                 echo "FAILURE"
