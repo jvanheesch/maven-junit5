@@ -43,6 +43,11 @@ pipeline {
         always {
             junit '**/target/surefire-reports/*.xml, **/target/failsafe-reports/*.xml'
         }
+        unstable {
+            script {
+                slackSend color: "good", message: "Message from Jenkins Pipeline"
+            }
+        }
         failure {
             script {
                 echo "FAILURE"
