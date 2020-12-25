@@ -45,7 +45,7 @@ pipeline {
         }
         unstable {
             script {
-                slackSend color: "good", message: "Message from Jenkins Pipeline"
+                slackSend channel: '#builds', color: 'danger', message: 'ABC', teamDomain: 'sandboxjoris'
             }
         }
         failure {
