@@ -1,5 +1,3 @@
-def pom
-
 pipeline {
     agent {
         label 'master'
@@ -15,19 +13,23 @@ pipeline {
     }
 
     stages {
-        stage('Checkout') {
-            steps {
-                script {
-                    echo 'Checkout'
-                    pom = this.readMavenPom()
-                }
-            }
-        }
         stage('Build') {
             steps {
                 script {
-                    echo 'Build'
-                    sh 'mvn -version'
+                    sh 'mvn clean package -DskipTests' // testFailureIgnore in surefire plugin
+                }
+            }
+        }
+        stage('Unit test') {
+            steps {
+                script {
+                    sh 'mvn test'
+                }
+            }
+        }
+        stage('Integration test') {
+            steps {
+                script {
                     sh 'mvn clean verify -Dmaven.test.failure.ignore'
                     // https://stackoverflow.com/a/50756301/1939921
 //                        configFileProvider([configFile(fileId: 'jenkins-maven-settings', variable: 'MAVEN_SETTINGS_XML')]) {
