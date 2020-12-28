@@ -1,6 +1,6 @@
 // TODO_JORIS: custom steps zonder shared libraries zou toch ook mogelijk moeten zijn?
 // kan mss enkel met plugins, gn idee hoe complex plugin automation is voor proprietary plugins
-@Library('util') _
+@Library('my-shared-library') _
 
 pipeline {
     agent {
