@@ -46,7 +46,7 @@ pipeline {
     post {
         always {
             junit '**/target/surefire-reports/*.xml, **/target/failsafe-reports/*.xml'
-            info 'shared library custom step example'
+            logscript 'shared library custom step example'
         }
         unstable {
             script {
